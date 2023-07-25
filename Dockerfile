@@ -6,11 +6,7 @@ FROM eclipse-temurin:17.0.7_7-jdk
 WORKDIR /app
 
 # Find the java file that is created when we run mvn clean package
-<<<<<<< HEAD:Dockerfile
 COPY target/ProjectHarbourBooking-0.0.1.jar harbourBookingSystem-0.0.1.jar
-=======
-COPY target/SCTP-SE-MODULE03-JAVA-PROJECTTEAM02-0.0.1.jar harbourBookingSystem-0.0.1.jar
->>>>>>> c5540ac (edit dockerfile):DockerFile
 
 CMD ["java", "-jar", "harbourBookingSystem-0.0.1.jar"]
 
