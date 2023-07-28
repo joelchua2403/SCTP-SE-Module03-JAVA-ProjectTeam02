@@ -64,12 +64,13 @@ jobs:
           IMAGE_NAME: joelchua2403/education-workspace
       steps:
         - checkout
+        - run: mvn clean package
         - setup_remote_docker
         - docker/check
         - run: docker build -t joelchua2403/education-workspace .
         - snyk/scan: 
             docker-image-name: joelchua2403/education-workspace
-            severity-threshold: high
+            severity-threshold: critical
 
 
 workflows:

@@ -87,19 +87,19 @@ public class BerthServiceImpl implements BerthService {
         return null;
     }
 
-    @Override
-    public void deleteBerth(Long id) {
-        Optional<Berth> optionalBerth = berthRepository.findById(id);
-        if (optionalBerth.isPresent()) {
-            Berth berth = optionalBerth.get();
-            Booking booking = berth.getBooking();
-            if (booking != null) {
-                berth.setBooking(null); // Dissociate the booking from the berth
-                berthRepository.save(berth);
-                bookingRepository.delete(booking);
-            }
-            berthRepository.deleteById(id);
-        }
-    }
+    // @Override
+    // public void deleteBerth(Long id) {
+    //     Optional<Berth> optionalBerth = berthRepository.findById(id);
+    //     if (optionalBerth.isPresent()) {
+    //         Berth berth = optionalBerth.get();
+    //         Booking booking = berth.getBooking();
+    //         if (booking != null) {
+    //             berth.setBooking(null); // Dissociate the booking from the berth
+    //             berthRepository.save(berth);
+    //             bookingRepository.delete(booking);
+    //         }
+    //         berthRepository.deleteById(id);
+    //     }
+    // }
 
 }

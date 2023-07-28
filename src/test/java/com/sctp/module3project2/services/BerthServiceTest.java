@@ -112,19 +112,19 @@ public class BerthServiceTest {
         verifyNoMoreInteractions(berthRepository);
     }
 
-    @Test
-    void deleteBerth() {
-        // Arrange
-        Long berthId = 1L;
-        Berth existingBerth = new Berth(berthId, "Test Berth", "Test Location", true);
-        when(berthRepository.findById(berthId)).thenReturn(Optional.of(existingBerth));
+    // @Test
+    // void deleteBerth() {
+    //     // Arrange
+    //     Long berthId = 1L;
+    //     Berth existingBerth = new Berth(berthId, "Test Berth", "Test Location", true);
+    //     when(berthRepository.findById(berthId)).thenReturn(Optional.of(existingBerth));
 
-        // Act
-        berthService.deleteBerth(berthId);
+    //     // Act
+    //     berthService.deleteBerth(berthId);
 
-        // Assert
-        verify(berthRepository, times(1)).findById(berthId);
-        verify(berthRepository, times(1)).deleteById(berthId);
-        verifyNoMoreInteractions(berthRepository);
-    }
+    //     // Assert
+    //     verify(berthRepository, times(1)).findById(berthId);
+    //     verify(berthRepository, times(1)).deleteById(berthId);
+    //     verifyNoMoreInteractions(berthRepository);
+    // }
 }

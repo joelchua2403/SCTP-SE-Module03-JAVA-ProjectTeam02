@@ -34,13 +34,7 @@ public class Berth {
     @Column(name = "is_available", nullable = false)
     private boolean availability;
 
-    // Added by Farhan - Cascade & OrphanRemoval
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
 
-    // Edited by Farhan
-    @PrimaryKeyJoinColumn
-    // @JoinColumn(name = "berth_id")
-    private Booking booking;
 
     // CONSTRUCTORS.
     public Berth() {
@@ -85,13 +79,13 @@ public class Berth {
     public void setAvailability(boolean availability) {
         this.availability = availability;
     }
+    
+    // public Booking getBooking() {
+    //     return booking;
+    // }
 
-    // OneToOne relationship
-    public Booking getBooking() {
-        return booking;
-    }
+    // public void setBooking(Booking booking) {
+    //     this.booking = booking;
+    // }
 
-    public void setBooking(Booking booking) {
-        this.booking = booking;
-    }
 }

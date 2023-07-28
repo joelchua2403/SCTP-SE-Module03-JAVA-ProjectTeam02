@@ -15,6 +15,6 @@ public interface BerthService {
 
     Berth updateBerth(Long id, Berth berth);
 
-    void deleteBerth(Long id);
+    // void deleteBerth(Long id);
 
 }

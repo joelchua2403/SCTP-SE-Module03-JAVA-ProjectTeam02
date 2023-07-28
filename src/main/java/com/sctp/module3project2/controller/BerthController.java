@@ -81,10 +81,10 @@ public class BerthController {
         }
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBerthPortLocation(@PathVariable("id") Long id) {
-        service.deleteBerth(id);
-        return ResponseEntity.noContent().build();
-    }
+    // @DeleteMapping("/{id}")
+    // public ResponseEntity<Void> deleteBerthPortLocation(@PathVariable("id") Long id) {
+    //     service.deleteBerth(id);
+    //     return ResponseEntity.noContent().build();
+    // }
 
 }
