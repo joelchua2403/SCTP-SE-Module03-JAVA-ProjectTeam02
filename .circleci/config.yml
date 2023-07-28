@@ -65,16 +65,9 @@ jobs:
       steps:
         - checkout
         - run: mvn clean package
-<<<<<<< HEAD
         - setup_remote_docker
         - docker/check
         - run: docker build -t joelchua2403/education-workspace .
-=======
-        - run: 
-            name: Build and push image to DockerHub
-            command: | 
-              docker build -t joelchua2403/education-workspace .
->>>>>>> 4ec7012 (add build job)
         - snyk/scan: 
             docker-image-name: joelchua2403/education-workspace
             severity-threshold: critical
@@ -137,20 +130,3 @@ workflows:
   #           branches:
   #             only: release
 
-<<<<<<< HEAD
-=======
-  snyk_workflow:
-    jobs:
-      - build:
-          filters:
-            branches:
-              only: develop
-      - snyk-scan:
-          requires:
-            - build
-          filters:
-            branches:
-              only: develop
-            tags:
-              only: /^v.*/  
->>>>>>> 4ec7012 (add build job)
