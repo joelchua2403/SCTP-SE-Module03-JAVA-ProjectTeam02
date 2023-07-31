@@ -42,21 +42,6 @@ jobs:
             heroku container:release web -a harbourbookingsystem
             
 
-  # deploy:
-  #   docker:
-  #       - image: cimg/openjdk:17.0.7
-  #   steps:
-  #       - setup_remote_docker      
-  #       - heroku/install
-  #       - checkout
-  #       - run: mvn clean package
-  #       - run:
-  #           name: Heroku Container Push
-  #           command: | 
-  #               heroku container:login
-  #               heroku container:push web -a harbourbookingsystem
-  #               heroku container:release web -a harbourbookingsystem
-
   snyk-scan:
       docker:
           - image: cimg/openjdk:17.0.7
@@ -104,23 +89,4 @@ workflows:
           filters:
             branches: 
               only: release
-      # - deploy:
-      #     requires:
-      #       - build-and-push
-      #     filters:
-      #       branches: 
-      #         only: release
-
-  # heroku_workflow:
-  #   jobs:
-  #     - build-and-push:
-  #         filters:
-  #           branches:
-  #             only: release
-  #     - deploy:
-  #         requires:
-  #           - build-and-push
-  #         filters:
-  #           branches:
-  #             only: release
-
+     
